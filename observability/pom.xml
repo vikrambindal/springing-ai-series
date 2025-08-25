@@ -10,7 +10,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>demo.vikram.springai</groupId>
-    <artifactId>advanced-chat</artifactId>
+    <artifactId>observability</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Chat Demo</name>
     <description>Spring AI LLM Chat</description>
