@@ -8,5 +8,6 @@ multi part [Blog](https://spring.io/guides/gs/rest-service/) series.
 * **basic-chat**:       
   * Demonstrates the use of Spring AI interacting with the LLM
   * Blog: [Springing into AI - Part 6: Chat Client - Basic Application](https://vikram-bindal.blogspot.com/2025/08/springing-into-ai-part-6-chat-client.html)
-* **advanced-chat**:    
+* **observability**:    
   * Observability (Prometheus, Grafana) for token monitoring
+  * Blog: [Springing into AI - Part 7: Observability](https://vikram-bindal.blogspot.com/2025/08/springing-into-ai-part-7-observability.html)
