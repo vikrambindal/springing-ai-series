@@ -11,7 +11,7 @@
 	<groupId>demo.vikram.springai</groupId>
 	<artifactId>basic-chat</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Chat Demo</name>
+	<name>basic-chat</name>
 	<description>Spring AI LLM Chat</description>
 
 	<properties>
