@@ -13,3 +13,6 @@ Repository containing code samples used as playground to experiment with SpringA
 * **chat-memory**:
   * Demonstrates options for injecting conversational history
   * Blog: [Springing into AI - Part 8: Chat Memory](https://vikram-bindal.blogspot.com/2025/08/springing-into-ai-part-8-chat-memory.html)
+* **tool-calling**
+  * Demonstrates use of calling custom functions
+  * Blog: [Springing into AI - Part 9: Tool Calling]()
