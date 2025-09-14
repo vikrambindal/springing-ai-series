@@ -16,3 +16,6 @@ Repository containing code samples used as playground to experiment with SpringA
 * **tool-calling**
   * Demonstrates use of calling custom functions
   * Blog: [Springing into AI - Part 9: Tool Calling](https://vikram-bindal.blogspot.com/2025/09/springing-into-ai-part-9-tool-calling.html)
+* **rag**
+    * Demonstrates use of RAG for custom documents
+    * Blog: [Springing into AI - Part 10: RAG](https://vikram-bindal.blogspot.com/2025/09/springing-into-ai-part-10-rag.html)
