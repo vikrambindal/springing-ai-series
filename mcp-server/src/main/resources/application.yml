@@ -1,0 +1,21 @@
+logging:
+  level:
+    org.springframework.ai: debug
+
+spring:
+  main:
+    lazy-initialization: false
+    banner-mode: OFF
+  application:
+    name: demo
+
+  ai:
+    mcp:
+      server:
+        stdio: false
+        enabled: true
+        name: vikram-mcp-server
+        version: 1.0.0
+        protocol: STREAMABLE
+        streamable-http:
+          mcp-endpoint: /mcp
