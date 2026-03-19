@@ -19,3 +19,10 @@ Repository containing code samples used as playground to experiment with SpringA
 * **rag**
     * Demonstrates use of RAG for custom documents
     * Blog: [Springing into AI - Part 10: RAG](https://vikram-bindal.blogspot.com/2025/09/springing-into-ai-part-10-rag.html)
+* **mcp-server**
+    * Demonstrates use of MCP Server using Middle Earth Hobbit Inc for example
+    * Capabilities:
+      * [Springing into AI - Part 12: MCP Server - Resources](https://vikram-bindal.blogspot.com/2026/03/springing-into-ai-part-12-mcp-server.html)
+      * [Springing into AI - Part 13: MCP Server - Tools - Elicitation](https://vikram-bindal.blogspot.com/2026/03/springing-into-ai-part-13-mcp-server.html)
+      * [Springing into AI - Part 14: MCP Server - Tools - Sampling](https://vikram-bindal.blogspot.com/2026/03/springing-into-ai-part-14-mcp-server.html)
+      * [Springing into AI - Part 15: MCP Server - Tools - Notification](https://vikram-bindal.blogspot.com/2026/03/springing-into-ai-part-15-mcp-server.html)
