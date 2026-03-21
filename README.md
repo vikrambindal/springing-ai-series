@@ -26,3 +26,4 @@ Repository containing code samples used as playground to experiment with SpringA
       * [Springing into AI - Part 13: MCP Server - Tools - Elicitation](https://vikram-bindal.blogspot.com/2026/03/springing-into-ai-part-13-mcp-server.html)
       * [Springing into AI - Part 14: MCP Server - Tools - Sampling](https://vikram-bindal.blogspot.com/2026/03/springing-into-ai-part-14-mcp-server.html)
       * [Springing into AI - Part 15: MCP Server - Tools - Notification](https://vikram-bindal.blogspot.com/2026/03/springing-into-ai-part-15-mcp-server.html)
+      * [Springing into AI - Part 16: MCP Server - Prompts](https://vikram-bindal.blogspot.com/2026/03/springing-into-ai-part-16-mcp-server.html)
