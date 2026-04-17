@@ -1,0 +1,40 @@
+logging:
+  level:
+    org.springframework.security: trace
+    org.springframework.ai: debug
+
+spring:
+  main:
+    lazy-initialization: false
+    banner-mode: OFF
+  application:
+    name: mcp-server-security
+  ai:
+    mcp:
+      server:
+        enabled: true
+        type: SYNC
+        protocol: STREAMABLE
+        streamable-http:
+          mcp-endpoint: /mcp
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9000
+
+      authorizationserver:
+        client:
+          oidc-client:
+            registration:
+              client-id: "default-client-id"
+              client-secret: "{noop}default-client-secret"
+              client-authentication-methods:
+                - "client_secret_basic"
+                - "client_secret_post"
+                - "none"
+              authorization-grant-types:
+                - "authorization_code"
+                - "client_credentials"
+
