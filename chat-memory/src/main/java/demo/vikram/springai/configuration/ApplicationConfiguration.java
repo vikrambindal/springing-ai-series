@@ -1,4 +1,4 @@
-package dmeo.vikram.springai.configuration;
+package demo.vikram.springai.configuration;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;

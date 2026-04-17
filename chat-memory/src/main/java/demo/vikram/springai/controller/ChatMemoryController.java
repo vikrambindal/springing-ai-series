@@ -1,6 +1,6 @@
-package dmeo.vikram.springai.controller;
+package demo.vikram.springai.controller;
 
-import dmeo.vikram.springai.model.ApplicationDomain;
+import demo.vikram.springai.model.ApplicationDomain;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.memory.ChatMemory;
 import org.springframework.beans.factory.annotation.Qualifier;

@@ -1,4 +1,4 @@
-package dmeo.vikram.springai.model;
+package demo.vikram.springai.model;
 
 public interface ApplicationDomain {
 
