@@ -27,3 +27,10 @@ Repository containing code samples used as playground to experiment with SpringA
       * [Springing into AI - Part 14: MCP Server - Tools - Sampling](https://vikram-bindal.blogspot.com/2026/03/springing-into-ai-part-14-mcp-server.html)
       * [Springing into AI - Part 15: MCP Server - Tools - Notification](https://vikram-bindal.blogspot.com/2026/03/springing-into-ai-part-15-mcp-server.html)
       * [Springing into AI - Part 16: MCP Server - Prompts](https://vikram-bindal.blogspot.com/2026/03/springing-into-ai-part-16-mcp-server.html)
+* **auth-server**
+    * Demonstrates custom Authorization Server supporting OAuth capability    
+    * [Springing into AI - Part 17: MCP Server - Security](https://vikram-bindal.blogspot.com/2026/04/springing-into-ai-part-17-mcp-server.html)
+* **mcp-server-security**
+    * Demonstrates using the custom Authorization Server and the logged in user to view resources 
+    * [Springing into AI - Part 17: MCP Server - Security](https://vikram-bindal.blogspot.com/2026/04/springing-into-ai-part-17-mcp-server.html)
+      
