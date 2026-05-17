@@ -1,5 +1,6 @@
 logging:
   level:
+    demo.vikram.springai: info
     org.springframework.ai: debug
 
 spring:

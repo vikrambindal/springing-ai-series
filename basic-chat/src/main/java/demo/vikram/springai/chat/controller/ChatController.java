@@ -1,9 +1,8 @@
 package demo.vikram.springai.chat.controller;
 
 import demo.vikram.springai.chat.model.ApplicationDomain;
+import lombok.RequiredArgsConstructor;
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
-import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,29 +10,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/chat")
+@RequiredArgsConstructor
 public class ChatController {
 
     private final ChatClient chatClient;
 
-    public ChatController(ChatClient.Builder chatClientBuilder) {
-        this.chatClient = chatClientBuilder
-                .defaultAdvisors(new SimpleLoggerAdvisor())
-                .build();
-    }
+    @PostMapping
+    public Joke genericChat(@RequestBody ApplicationDomain.UserInputRequest userInputRequest) {
 
-    @PostMapping("/generic")
-    public String genericChat(@RequestBody ApplicationDomain.UserInputRequest userInputRequest) {
-
-        return chatClient.prompt(userInputRequest.input())
+        String joke = chatClient.prompt(userInputRequest.input())
                 .call()
                 .content();
+
+        return new Joke(joke);
     }
 
-    @PostMapping("/tokens")
-    public ChatResponse metadataChat(@RequestBody ApplicationDomain.UserInputRequest userInputRequest) {
-
-        return chatClient.prompt(userInputRequest.input())
-                .call()
-                .chatResponse();
-    }
+    record Joke(String joke) {}
 }

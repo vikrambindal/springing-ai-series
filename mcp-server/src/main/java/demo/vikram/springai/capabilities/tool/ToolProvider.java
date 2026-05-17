@@ -1,9 +1,11 @@
 package demo.vikram.springai.capabilities.tool;
 
 import demo.vikram.springai.model.FoodRecipe;
+import demo.vikram.springai.model.PartyResponse;
 import demo.vikram.springai.model.TravelResponse;
 import demo.vikram.springai.model.UserTravelChoice;
 import io.modelcontextprotocol.spec.McpSchema;
+import lombok.extern.slf4j.Slf4j;
 import org.springaicommunity.mcp.annotation.McpProgressToken;
 import org.springaicommunity.mcp.annotation.McpTool;
 import org.springaicommunity.mcp.annotation.McpToolParam;
@@ -14,6 +16,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+@Slf4j
 @Component
 public class ToolProvider {
 
@@ -45,6 +48,8 @@ public class ToolProvider {
                     .modelPreferences(null)
                     .progressToken(null)
                     .build();
+
+            log.info("Requesting LLM to sample request for some more information {}", samplingMessageRequest);
             McpSchema.CreateMessageResult messageResult = context.sample(samplingMessageRequest);
             McpSchema.TextContent content = (McpSchema.TextContent) messageResult.content();
             return new FoodRecipe(content.text());
@@ -66,16 +71,19 @@ public class ToolProvider {
         if (context.elicitEnabled()) {
 
             StructuredElicitResult<UserTravelChoice> elicit = context.elicit(spec ->
-                    spec.message("please select hobbit options"), UserTravelChoice.class);
+                    spec.message("Which route would you like ? (VIA_ISENGUARD, VIA_MARSHLANDS)"), UserTravelChoice.class);
 
             if (elicit.action() == McpSchema.ElicitResult.Action.ACCEPT) {
                 return switch (elicit.structuredContent().travelRoute()) {
-                    case VIA_ISENGUARD -> new TravelResponse("""
+                    case VIA_ISENGUARD -> {
+                        log.info("Returning Travel Response for route via isenguard.....");
+                        yield new TravelResponse("""
                             1. Start from %s,
                             2. Take left to Isenguard.
                             3. March towards Gondor.
                             4. You will then arrive at your destination: %s
                             """.formatted(from, to));
+                    }
                     case VIA_MARSHLANDS -> new TravelResponse("""
                             1. Start from %s,
                             2. You will meet Gollum
@@ -92,27 +100,33 @@ public class ToolProvider {
 
     @McpTool(
             name = "hobbitPartyPlanner",
-            description = "Provides direction to hobbits for planning a party"
+            description = "Helps in planning an annual party for hobbits"
     )
-    public String hobbitPartyPlanning(
+    public PartyResponse hobbitPartyPlanning(
             final McpSyncRequestContext exchange,
             @McpProgressToken Object token) throws InterruptedException {
 
         Object progressTracer = token == null ? "1" : token;
+        log.info("10% completed: Sending progress update...");
         exchange.progress(new McpSchema.ProgressNotification(progressTracer,
                 10, 100d, "Analyzing party items...."));
 
-        TimeUnit.SECONDS.sleep(10);
+        TimeUnit.SECONDS.sleep(2);
 
+        log.info("50% completed: Sending progress update...");
         exchange.progress(new McpSchema.ProgressNotification(progressTracer,
                 50, 100d, "I have list of items, preparing party plan...."));
 
-        TimeUnit.SECONDS.sleep(10);
+        TimeUnit.SECONDS.sleep(2);
 
+        log.info("100% completed: Sending progress update...");
         exchange.progress(new McpSchema.ProgressNotification(progressTracer,
-                100, 100d, "I have list of items, preparing party plan...."));
+                100, 100d, "I have a plan formulated, summarizing...."));
 
-        return """
+        TimeUnit.SECONDS.sleep(2);
+
+        log.info("Responding with party summary...");
+        return new PartyResponse("""
                 Okay, here is what I have planned.
                 1. Arrange drinks.
                 2. Hobbits love their music, so get a nice music with grooving beats.
@@ -121,6 +135,6 @@ public class ToolProvider {
                 5. What party is a party without firecrackers. Get a dragon fire cracker and keep it out of
                    arms way from Merry and Pippin.
                 6. Have a dance floor for everyone to enjoy the evening.
-                """;
+                """);
     }
 }
