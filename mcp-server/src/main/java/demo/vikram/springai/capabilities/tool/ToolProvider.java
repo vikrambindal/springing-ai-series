@@ -22,7 +22,7 @@ public class ToolProvider {
 
     @McpTool(
             name = "hobbitFoodRecipeAnalyzer",
-            description = "Provides summary of hobbit food recipe"
+            description = "Provides food recipe in helping hobbits make food"
     )
     public FoodRecipe hobbitFoodRecipeSampling(
             final McpSyncRequestContext context,
@@ -71,7 +71,7 @@ public class ToolProvider {
         if (context.elicitEnabled()) {
 
             StructuredElicitResult<UserTravelChoice> elicit = context.elicit(spec ->
-                    spec.message("Which route would you like ? (VIA_ISENGUARD, VIA_MARSHLANDS)"), UserTravelChoice.class);
+                    spec.message("Which route would you like ?"), UserTravelChoice.class);
 
             if (elicit.action() == McpSchema.ElicitResult.Action.ACCEPT) {
                 return switch (elicit.structuredContent().travelRoute()) {

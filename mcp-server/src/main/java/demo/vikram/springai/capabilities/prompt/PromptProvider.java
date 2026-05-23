@@ -24,19 +24,10 @@ public class PromptProvider {
                                 "I will be your Middle Earth Guide for today where I can tell you about hobbits. " +
                                 "Directions from and to certain destinations in Middle Earth. " +
                                 "Recipes about some of the favourite hobbit food along the way. " +
+                                "Provide aid in planning annual party for hobbits. " +
                                 "How can I help ?")),
                 new McpSchema.PromptMessage(McpSchema.Role.USER,
-                        new McpSchema.TextContent("I would like to learn more about Hobbit Inc.")),
-                new McpSchema.PromptMessage(McpSchema.Role.ASSISTANT,
-                        new McpSchema.ResourceLink("Hobbit Inc",
-                        "Hobbit Inc Ltd",
-                        "company://resources",
-                        "Provides information about Hobbit Inc.",
-                        null,
-                        null,
-                        null,
-                        null))
-        );
+                        new McpSchema.TextContent("I would like to learn more about Hobbit Inc.")));
     }
 
     @McpComplete(
